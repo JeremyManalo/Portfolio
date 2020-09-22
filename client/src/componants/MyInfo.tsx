@@ -5,7 +5,7 @@ import titleBarOptions from '../images/title-bar-options.png';
 
 const userStyles = makeStyles({
   mainContainer: {
-    marginTop: '35rem',
+    marginTop: '38rem',
     fontFamily: 'monaco',
   },
   tabbedLines: {
@@ -65,9 +65,8 @@ var jeremy = {
       link: 'https://github.com/JeremyManalo',
     },
   ],
-  education:
-    'B.Sc. Structural Engineering - University of California, Santa Cruz',
-  skills: ['JavaScipt', 'React', 'Python', 'Git'],
+  education: 'B.Sc. Computer Science - University of California, Santa Cruz',
+  skills: ['JavaScipt', 'TypeScript', 'React', 'Python', 'Git'],
 };
 
 const MyInfo = () => {
