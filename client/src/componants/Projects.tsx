@@ -53,7 +53,6 @@ const Projects = () => {
       <Box display="flex" flexWrap="wrap" justifyContent="start">
         {projectVideoItem()}
         {projectImageItem()}
-        {projectImageItem()}
       </Box>
     </Container>
   );

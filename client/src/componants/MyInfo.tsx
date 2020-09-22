@@ -5,7 +5,7 @@ import titleBarOptions from '../images/title-bar-options.png';
 
 const userStyles = makeStyles({
   mainContainer: {
-    marginTop: '50rem',
+    marginTop: '35rem',
     fontFamily: 'monaco',
   },
   tabbedLines: {
