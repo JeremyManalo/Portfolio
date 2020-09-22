@@ -11,10 +11,10 @@
     "typescript": "^4.0.3"
   },
   "scripts": {
-    "client-install": "npm install --prefix ../client",
+    "client-install": "npm install --prefix ./client",
     "start": "ts-node server.ts",
     "server": "nodemon server.ts",
-    "client": "npm start --prefix ../client",
+    "client": "npm start --prefix ./client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "heroku-prebuild": "npm i -D dotenv",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false cd ../client && npm install && npm run build"
