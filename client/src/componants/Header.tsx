@@ -57,29 +57,48 @@ const Header = () => {
     <Box
       display="flex"
       justifyContent="center"
-      alignItems="flex-end"
+      alignItems="center"
+      marginTop={15}
       component="div"
     >
-      <Grid container justify="center">
-        <Avatar className={classes.avatar} src={avatar} alt="Jeremy Manalo" />
-      </Grid>
-      <Typography className={classes.title} variant="h4">
-        <Typed strings={['Jeremy Manalo']} typeSpeed={30} />
-      </Typography>
-      <br />
-      <Typography className={classes.subTitle} variant="h5">
-        <Typed
-          strings={['Web Design', 'Web Development', 'MERN Stack']}
-          typeSpeed={30}
-          backSpeed={16}
-          loop
-        />
-      </Typography>
-      <Grid container justify="center">
-        {iconLink(linkedinIcon, 'https://linkedin.com/in/jeremy-manalo')}
-        {iconLink(githubIcon, 'https://github.com/JeremyManalo')}
-        {emailLink(emailIcon, 'jeremy.h.manalo@gmail.com')}
-      </Grid>
+      <Box display="block" component="div">
+        <Box display="flex" component="div">
+          <Grid container justify="center">
+            <Avatar
+              className={classes.avatar}
+              src={avatar}
+              alt="Jeremy Manalo"
+            />
+          </Grid>
+        </Box>
+        <Box display="flex" justifyContent="center" component="div">
+          <Typography className={classes.title} variant="h4">
+            <Typed strings={['Jeremy Manalo']} typeSpeed={30} />
+          </Typography>
+        </Box>
+        <Box
+          display="flex"
+          marginTop={1}
+          justifyContent="center"
+          component="div"
+        >
+          <Typography className={classes.subTitle} variant="h5">
+            <Typed
+              strings={['Web Design', 'Web Development', 'MERN Stack']}
+              typeSpeed={30}
+              backSpeed={16}
+              loop
+            />
+          </Typography>
+        </Box>
+        <Box component="div">
+          <Grid container justify="center">
+            {iconLink(linkedinIcon, 'https://linkedin.com/in/jeremy-manalo')}
+            {iconLink(githubIcon, 'https://github.com/JeremyManalo')}
+            {emailLink(emailIcon, 'jeremy.h.manalo@gmail.com')}
+          </Grid>
+        </Box>
+      </Box>
     </Box>
   );
 };

@@ -19,9 +19,9 @@ const Home = () => {
 
   return (
     <Box component="div">
+      <AppParticles />
       <Navbar />
       <Header />
-      <AppParticles />
       <MyInfo />
       {/* <Projects /> */}
       <Footer />

@@ -43,7 +43,7 @@ const AppParticles = () => {
           move: {
             out_mode: 'out',
             enable: true,
-            speed: 0.9,
+            speed: 0.5,
           },
           links: {
             enable: true,

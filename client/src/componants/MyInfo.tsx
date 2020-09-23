@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Typography, Container, Box, Link, Avatar } from '@material-ui/core';
+import { Typography, Container, Box, Link } from '@material-ui/core';
+import Typed from 'react-typed';
 import titleBarOptions from '../images/title-bar-options.png';
 
 const userStyles = makeStyles({
   mainContainer: {
-    marginTop: '38rem',
+    marginTop: '10rem',
     fontFamily: 'monaco',
   },
   tabbedLines: {
@@ -72,7 +73,7 @@ var jeremy = {
 const MyInfo = () => {
   const classes = userStyles();
 
-  const coloredText = (color: string, key: string) => (
+  const coloredText = (color: string, key: any) => (
     <Box className={color} component="span">
       {key}
     </Box>
@@ -133,7 +134,7 @@ const MyInfo = () => {
   );
 
   // String Array Key Line
-  const strArrKeyLine = (key: string, val: string[]) => (
+  const strArrKeyLine = (key: string, val: string[], typed: boolean) => (
     <Box className={classes.reverseIndent} component="div" display="block">
       {coloredText(classes.keyText, key)}
       {coloredText(classes.operatorText, ': ')}
@@ -145,11 +146,16 @@ const MyInfo = () => {
             {index !== val.length - 1 ? (
               <Box component="span">{coloredText(classes.varText, ', ')}</Box>
             ) : (
-              <Box component="span"></Box>
+              <></>
             )}
           </Box>
         );
       })}
+      {typed ? (
+        coloredText(classes.varText, <Typed strings={['']} typeSpeed={30} />)
+      ) : (
+        <></>
+      )}
       {coloredText(classes.varText, '],')}
       <br />
     </Box>
@@ -172,7 +178,7 @@ const MyInfo = () => {
               {strKeyLine('currentLocation', jeremy.currentLocation)}
               {linkKeyLine('contacts', jeremy.contacts)}
               {strKeyLine('education', jeremy.education)}
-              {strArrKeyLine('skills', jeremy.skills)}
+              {strArrKeyLine('skills', jeremy.skills, true)}
             </Box>
             {coloredText(classes.varText, '},')}
           </Box>
