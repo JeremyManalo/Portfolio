@@ -13,9 +13,9 @@ const userStyles = makeStyles({
     borderLeft: '1px solid #3b4047',
   },
   reverseIndent: {
-    display: 'inline-block',
     paddingLeft: '25px',
     textIndent: '-20px',
+    marginRight: 'auto',
   },
   codeWindow: {
     padding: '2px',
@@ -80,7 +80,7 @@ const MyInfo = () => {
 
   // Name Declaration Line
   const nameDeclLine = () => (
-    <Box className={classes.reverseIndent} component="span">
+    <Box className={classes.reverseIndent} component="div" display="block">
       {coloredText(classes.typeText, 'var ')}
       {coloredText(classes.varText, 'jeremy ')}
       {coloredText(classes.operatorText, '= ')}
@@ -90,7 +90,7 @@ const MyInfo = () => {
 
   // String Key Line
   const strKeyLine = (key: string, val: string) => (
-    <Box className={classes.reverseIndent} component="span">
+    <Box className={classes.reverseIndent} component="div" display="block">
       {coloredText(classes.keyText, key)}
       {coloredText(classes.operatorText, ': ')}
       {coloredText(classes.stringText, "'" + val + "'")}
@@ -101,7 +101,7 @@ const MyInfo = () => {
 
   // Link Key Line
   const linkKeyLine = (key: string, val: { text: string; link: string }[]) => (
-    <Box className={classes.reverseIndent} component="span">
+    <Box className={classes.reverseIndent} component="div" display="block">
       {coloredText(classes.keyText, key)}
       {coloredText(classes.operatorText, ': ')}
       {coloredText(classes.varText, '[')}
@@ -134,7 +134,7 @@ const MyInfo = () => {
 
   // String Array Key Line
   const strArrKeyLine = (key: string, val: string[]) => (
-    <Box className={classes.reverseIndent} component="span">
+    <Box className={classes.reverseIndent} component="div" display="block">
       {coloredText(classes.keyText, key)}
       {coloredText(classes.operatorText, ': ')}
       {coloredText(classes.varText, '[')}
@@ -157,7 +157,7 @@ const MyInfo = () => {
 
   return (
     <Container className={classes.mainContainer} maxWidth="md">
-      <Typography style={{ fontFamily: 'Monaco' }}>
+      <Typography style={{ fontFamily: 'Monaco, monospace' }}>
         <Box className={classes.codeWindow} borderRadius={5}>
           <Box className={classes.titleBar}>
             <img
