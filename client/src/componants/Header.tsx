@@ -73,7 +73,7 @@ const Header = () => {
         </Box>
         <Box display="flex" justifyContent="center" component="div">
           <Typography className={classes.title} variant="h4">
-            <Typed strings={['Jeremy Manalo']} typeSpeed={30} />
+            <Typed strings={['Jeremy Manalo']} typeSpeed={50} />
           </Typography>
         </Box>
         <Box
@@ -85,8 +85,8 @@ const Header = () => {
           <Typography className={classes.subTitle} variant="h5">
             <Typed
               strings={['Web Design', 'Web Development', 'MERN Stack']}
-              typeSpeed={30}
-              backSpeed={16}
+              typeSpeed={50}
+              backSpeed={20}
               loop
             />
           </Typography>

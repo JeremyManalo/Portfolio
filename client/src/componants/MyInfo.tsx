@@ -151,11 +151,7 @@ const MyInfo = () => {
           </Box>
         );
       })}
-      {typed ? (
-        coloredText(classes.varText, <Typed strings={['']} typeSpeed={30} />)
-      ) : (
-        <></>
-      )}
+      {typed ? coloredText(classes.varText, <Typed strings={['']} />) : <></>}
       {coloredText(classes.varText, '],')}
       <br />
     </Box>
