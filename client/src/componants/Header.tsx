@@ -34,15 +34,6 @@ const useStyles = makeStyles((theme) => ({
     color: appColors.subHeaderText,
     marginBottom: '1rem',
   },
-  typedContainer: {
-    position: 'absolute',
-    top: '45%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
-    width: '100vw',
-    textAlign: 'center',
-    zIndex: 1,
-  },
 }));
 
 const Header = () => {
@@ -63,7 +54,12 @@ const Header = () => {
   );
 
   return (
-    <Box className={classes.typedContainer}>
+    <Box
+      display="flex"
+      justifyContent="center"
+      alignItems="flex-end"
+      component="div"
+    >
       <Grid container justify="center">
         <Avatar className={classes.avatar} src={avatar} alt="Jeremy Manalo" />
       </Grid>
