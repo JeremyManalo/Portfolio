@@ -6,6 +6,8 @@ import { makeStyles } from '@material-ui/styles';
 const useStyles = makeStyles({
   particlesCanvas: {
     position: 'absolute',
+    width: '100%',
+    height: '100%',
     zIndex: -1,
   },
 });
