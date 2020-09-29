@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import appColors from '../styles/appColors';
 import { makeStyles } from '@material-ui/core/styles';
 import { Typography, Box, Container } from '@material-ui/core';
+import SpringModal from './ProjectModal';
 import servingNowImage from '../images/serving-now.png';
 
 const useStyles = makeStyles((theme) => ({
@@ -21,38 +22,52 @@ const useStyles = makeStyles((theme) => ({
   },
   projectInfo: {
     marginTop: '-10px',
-    backgroundColor: '#f0e9d1',
+    backgroundColor: '#fcfcfc',
     height: '200px',
   },
 }));
 
+const projects = {};
+
 const Projects = () => {
   const classes = useStyles();
 
-  const projectVideoItem = () => (
+  const [state, setState] = useState();
+
+  const renterProjectTypeSwitch = (type: string, src: string) => {
+    switch (type) {
+      case 'video':
+        return (
+          <iframe
+            className={classes.projectMedia}
+            src={src}
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          />
+        );
+      case 'image':
+        return <img className={classes.projectMedia} src={servingNowImage} />;
+    }
+  };
+
+  const projectItem = (properties: object) => (
     <Box className={classes.projectItem}>
-      <iframe
-        className={classes.projectMedia}
-        src="https://www.youtube.com/embed/Uqqi5AJw3l8"
-        frameBorder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowFullScreen
-      />
-      <Box className={classes.projectInfo} borderRadius={4}></Box>
-    </Box>
-  );
-  const projectImageItem = () => (
-    <Box className={classes.projectItem}>
-      <img className={classes.projectMedia} src={servingNowImage} />
-      <Box className={classes.projectInfo} borderRadius={4}></Box>
+      {renterProjectTypeSwitch(type, src)}
+      <Box className={classes.projectInfo} borderRadius={4}>
+        <Typography>
+          <Box component="h1">{title}</Box>
+        </Typography>
+        {SpringModal()}
+      </Box>
     </Box>
   );
 
   return (
     <Container className={classes.mainContainer} maxWidth="md">
       <Box display="flex" flexWrap="wrap" justifyContent="start">
-        {projectVideoItem()}
-        {projectImageItem()}
+        {projectItem('video', 'https://www.youtube.com/embed/Uqqi5AJw3l8')}
+        {projectItem('image', servingNowImage)}
       </Box>
     </Container>
   );

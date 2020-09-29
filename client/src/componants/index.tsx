@@ -23,7 +23,7 @@ const Home = () => {
       <Navbar />
       <Header />
       <MyInfo />
-      {/* <Projects /> */}
+      <Projects />
       <Footer />
     </Box>
   );
