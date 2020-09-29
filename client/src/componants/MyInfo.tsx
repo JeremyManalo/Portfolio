@@ -82,7 +82,7 @@ const MyInfo = () => {
   // Name Declaration Line
   const nameDeclLine = () => (
     <Box className={classes.reverseIndent} component="div" display="block">
-      {coloredText(classes.typeText, 'var ')}
+      {coloredText(classes.typeText, 'let ')}
       {coloredText(classes.varText, 'jeremy ')}
       {coloredText(classes.operatorText, '= ')}
       {coloredText(classes.varText, '{')}
