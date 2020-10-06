@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import appColors from '../styles/appColors';
 import { makeStyles } from '@material-ui/core/styles';
-import { Typography, Box, Container } from '@material-ui/core';
+import { Box, Container } from '@material-ui/core';
 import SpringModal from './ProjectModal';
 import servingNowImage from '../images/serving-now.png';
 
@@ -10,7 +10,7 @@ const useStyles = makeStyles((theme) => ({
     marginTop: '2rem',
   },
   projectItem: {
-    marginBottom: '2rem',
+    marginBottom: '4rem',
     minWidth: '300px',
     width: '50%',
     paddingLeft: '5%',
@@ -20,14 +20,28 @@ const useStyles = makeStyles((theme) => ({
     width: '100%',
     height: '200px',
   },
-  projectInfo: {
+  projectInfoContainer: {
     marginTop: '-10px',
-    backgroundColor: '#fcfcfc',
+    backgroundColor: '#fff',
     height: '200px',
+  },
+  projectTitle: {
+    fontSize: '22px',
+    color: '#808080',
   },
 }));
 
-const projects = {};
+const projectCaitlinObject = {
+  title: 'Project Caitlin',
+  src: 'https://www.youtube.com/embed/Uqqi5AJw3l8',
+  srcType: 'video',
+};
+
+const servingNowObject = {
+  title: 'Serving Now',
+  src: servingNowImage,
+  srcType: 'image',
+};
 
 const Projects = () => {
   const classes = useStyles();
@@ -51,23 +65,32 @@ const Projects = () => {
     }
   };
 
-  const projectItem = (properties: object) => (
+  const projectItem = (projectObject: any) => (
     <Box className={classes.projectItem}>
-      {renterProjectTypeSwitch(type, src)}
-      <Box className={classes.projectInfo} borderRadius={4}>
-        <Typography>
-          <Box component="h1">{title}</Box>
-        </Typography>
-        {SpringModal()}
+      {renterProjectTypeSwitch(projectObject.srcType, projectObject.src)}
+      <Box className={classes.projectInfoContainer} borderRadius={4}>
+        <Box
+          className={classes.projectTitle}
+          display="flex"
+          justifyContent="center"
+          component="div"
+          pt={1}
+        >
+          {projectObject.title}
+        </Box>
+        <Box display="flex" justifyContent="center" component="div" pt={1}>
+          {SpringModal()}
+        </Box>
       </Box>
     </Box>
   );
 
   return (
     <Container className={classes.mainContainer} maxWidth="md">
-      <Box display="flex" flexWrap="wrap" justifyContent="start">
-        {projectItem('video', 'https://www.youtube.com/embed/Uqqi5AJw3l8')}
-        {projectItem('image', servingNowImage)}
+      <Box display="flex" flexWrap="wrap" justifyContent="center">
+        {projectItem(projectCaitlinObject)}
+        {projectItem(servingNowObject)}
+        {projectItem(servingNowObject)}
       </Box>
     </Container>
   );
