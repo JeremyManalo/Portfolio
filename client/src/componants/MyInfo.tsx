@@ -108,10 +108,10 @@ const MyInfo = () => {
       {coloredText(classes.varText, '[')}
       <Link
         target="_top"
-        href="mailto:jeremy.h.manalo@gmail.com"
+        href="mailto:contact@jeremymanalo.com"
         underline="always"
       >
-        jeremy.h.manalo@gmail.com
+        contact@jeremymanalo.com
       </Link>
       {coloredText(classes.varText, ', ')}
       {val.map((value, index) => {

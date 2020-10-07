@@ -95,7 +95,7 @@ const Header = () => {
           <Grid container justify="center">
             {iconLink(linkedinIcon, 'https://linkedin.com/in/jeremy-manalo')}
             {iconLink(githubIcon, 'https://github.com/JeremyManalo')}
-            {emailLink(emailIcon, 'jeremy.h.manalo@gmail.com')}
+            {emailLink(emailIcon, 'contact@jeremymanalo.com')}
           </Grid>
         </Box>
       </Box>
