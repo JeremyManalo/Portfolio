@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import appColors from '../styles/appColors';
+import appStyles from '../styles/appStyles';
 import { makeStyles } from '@material-ui/core/styles';
 import { Box, Container } from '@material-ui/core';
 import SpringModal from './ProjectModal';
@@ -12,9 +13,9 @@ const useStyles = makeStyles((theme) => ({
   projectItem: {
     marginBottom: '4rem',
     minWidth: '300px',
-    width: '50%',
-    paddingLeft: '5%',
-    paddingRight: '5%',
+    width: '40%',
+    marginLeft: '5%',
+    marginRight: '5%',
   },
   projectMedia: {
     width: '100%',
@@ -22,29 +23,31 @@ const useStyles = makeStyles((theme) => ({
   },
   projectInfoContainer: {
     marginTop: '-10px',
-    backgroundColor: '#fff',
+    backgroundColor: appColors.subHeaderText,
     height: '200px',
   },
   projectTitle: {
     fontSize: '22px',
-    color: '#808080',
+    color: appColors.body,
   },
 }));
 
-const projectCaitlinObject = {
-  title: 'Project Caitlin',
-  src: 'https://www.youtube.com/embed/Uqqi5AJw3l8',
-  srcType: 'video',
-};
-
-const servingNowObject = {
-  title: 'Serving Now',
-  src: servingNowImage,
-  srcType: 'image',
+const projectObjects = {
+  projectCaitlin: {
+    title: 'Project Caitlin',
+    src: 'https://www.youtube.com/embed/Uqqi5AJw3l8',
+    srcType: 'video',
+  },
+  servingNow: {
+    title: 'Serving Now',
+    src: servingNowImage,
+    srcType: 'image',
+  },
 };
 
 const Projects = () => {
   const classes = useStyles();
+  const appClasses = appStyles();
 
   const [state, setState] = useState();
 
@@ -66,7 +69,7 @@ const Projects = () => {
   };
 
   const projectItem = (projectObject: any) => (
-    <Box className={classes.projectItem}>
+    <Box boxShadow={10} className={classes.projectItem}>
       {renterProjectTypeSwitch(projectObject.srcType, projectObject.src)}
       <Box className={classes.projectInfoContainer} borderRadius={4}>
         <Box
@@ -87,10 +90,26 @@ const Projects = () => {
 
   return (
     <Container className={classes.mainContainer} maxWidth="md">
+      <Box mb={10} mt={10}>
+        <Box
+          className={appClasses.sectionLabel}
+          display="flex"
+          justifyContent="center"
+          property="h1"
+        >
+          Projects
+        </Box>
+        <Box
+          className={appClasses.labelAccent}
+          display="flex"
+          justifyContent="center"
+          property="div"
+        ></Box>
+      </Box>
       <Box display="flex" flexWrap="wrap" justifyContent="center">
-        {projectItem(projectCaitlinObject)}
-        {projectItem(servingNowObject)}
-        {projectItem(servingNowObject)}
+        {projectItem(projectObjects['projectCaitlin'])}
+        {projectItem(projectObjects['servingNow'])}
+        {projectItem(projectObjects['servingNow'])}
       </Box>
     </Container>
   );
