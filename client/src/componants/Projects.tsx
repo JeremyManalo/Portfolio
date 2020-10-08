@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
   },
   projectTitle: {
     fontSize: '22px',
-    color: appColors.body,
+    color: '#808080',
   },
 }));
 

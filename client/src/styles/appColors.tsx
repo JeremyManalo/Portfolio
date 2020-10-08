@@ -1,7 +1,7 @@
 const appColors = {
   headerText: '#f6db83',
-  subHeaderText: '#fff8de',
-  body: '#29494b',
+  subHeaderText: '#fff',
+  body: '#3e536d',
 };
 
 export default appColors;
