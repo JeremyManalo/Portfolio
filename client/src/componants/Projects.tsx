@@ -3,6 +3,7 @@ import appColors from '../styles/appColors';
 import appStyles from '../styles/appStyles';
 import { makeStyles } from '@material-ui/core/styles';
 import { Box, Container } from '@material-ui/core';
+import SectionLabel from './SectionLabel';
 import SpringModal from './ProjectModal';
 import servingNowImage from '../images/serving-now.png';
 
@@ -24,22 +25,32 @@ const useStyles = makeStyles((theme) => ({
   projectInfoContainer: {
     marginTop: '-10px',
     backgroundColor: appColors.subHeaderText,
-    height: '200px',
+    height: '300px',
   },
   projectTitle: {
     fontSize: '22px',
     color: '#808080',
+    textAlign: 'center',
+  },
+  projectDescription: {
+    fontSize: '14px',
+    color: '#808080',
+    textAlign: 'justify',
   },
 }));
 
 const projectObjects = {
   projectCaitlin: {
     title: 'Project Caitlin',
+    description:
+      'A web and Mobile Application for a high school girl who sustain a head injury during her cross country practice. She now suffers from a form of aphasia that causes her to lose her memory every minute. This application was made to help her keep track of her day to day life as well as her goals and aspirations',
     src: 'https://www.youtube.com/embed/Uqqi5AJw3l8',
     srcType: 'video',
   },
   servingNow: {
     title: 'Serving Now',
+    description:
+      'Another web and mobile application that provides a platform for local San Jose farmers to list, sell, and have their produce delievered to customers.',
     src: servingNowImage,
     srcType: 'image',
   },
@@ -71,41 +82,28 @@ const Projects = () => {
   const projectItem = (projectObject: any) => (
     <Box boxShadow={10} className={classes.projectItem}>
       {renterProjectTypeSwitch(projectObject.srcType, projectObject.src)}
-      <Box className={classes.projectInfoContainer} borderRadius={4}>
-        <Box
-          className={classes.projectTitle}
-          display="flex"
-          justifyContent="center"
-          component="div"
-          pt={1}
-        >
+      <Box
+        display="flex"
+        alignItems="center"
+        flexDirection="column"
+        p={1}
+        className={classes.projectInfoContainer}
+        borderRadius={4}
+      >
+        <Box className={classes.projectTitle} pt={1}>
           {projectObject.title}
         </Box>
-        <Box display="flex" justifyContent="center" component="div" pt={1}>
-          {SpringModal()}
+        <Box flexGrow={1} className={classes.projectDescription} pt={1} px={3}>
+          {projectObject.description}
         </Box>
+        <Box>{SpringModal()}</Box>
       </Box>
     </Box>
   );
 
   return (
     <Container className={classes.mainContainer} maxWidth="md">
-      <Box mb={10} mt={10}>
-        <Box
-          className={appClasses.sectionLabel}
-          display="flex"
-          justifyContent="center"
-          property="h1"
-        >
-          Projects
-        </Box>
-        <Box
-          className={appClasses.labelAccent}
-          display="flex"
-          justifyContent="center"
-          property="div"
-        ></Box>
-      </Box>
+      {SectionLabel('Projects')}
       <Box display="flex" flexWrap="wrap" justifyContent="center">
         {projectItem(projectObjects['projectCaitlin'])}
         {projectItem(projectObjects['servingNow'])}

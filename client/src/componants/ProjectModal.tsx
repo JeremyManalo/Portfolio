@@ -1,8 +1,12 @@
 import React from 'react';
-import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
-import Modal from '@material-ui/core/Modal';
-import Backdrop from '@material-ui/core/Backdrop';
-import Fade from '@material-ui/core/Fade';
+import appColors from '../styles/appColors';
+import {
+  makeStyles,
+  withStyles,
+  Theme,
+  createStyles,
+} from '@material-ui/core/styles';
+import { Box, Button, Modal, Backdrop, Fade } from '@material-ui/core';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -17,8 +21,21 @@ const useStyles = makeStyles((theme: Theme) =>
       boxShadow: theme.shadows[5],
       padding: theme.spacing(2, 4, 3),
     },
+    modalButton: {
+      bottom: 0,
+    },
   })
 );
+
+const ColorButton = withStyles((theme: Theme) => ({
+  root: {
+    color: theme.palette.getContrastText(appColors.body),
+    backgroundColor: appColors.body,
+    '&:hover': {
+      backgroundColor: appColors.bodyLighter,
+    },
+  },
+}))(Button);
 
 export default function TransitionsModal() {
   const classes = useStyles();
@@ -33,10 +50,16 @@ export default function TransitionsModal() {
   };
 
   return (
-    <div>
-      <button type="button" onClick={handleOpen}>
-        react-transition-group
-      </button>
+    <>
+      <Box display="flex" alignSelf="flex-end">
+        <ColorButton
+          className={classes.modalButton}
+          type="button"
+          onClick={handleOpen}
+        >
+          More information
+        </ColorButton>
+      </Box>
       <Modal
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
@@ -58,6 +81,6 @@ export default function TransitionsModal() {
           </div>
         </Fade>
       </Modal>
-    </div>
+    </>
   );
 }
