@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import appColors from '../styles/appColors';
 import appStyles from '../styles/appStyles';
 import { makeStyles } from '@material-ui/core/styles';
-import { Box, Container } from '@material-ui/core';
+import { Box, Container, Typography } from '@material-ui/core';
 import SectionLabel from './SectionLabel';
 import SpringModal from './ProjectModal';
 import servingNowImage from '../images/serving-now.png';
@@ -25,10 +25,10 @@ const useStyles = makeStyles((theme) => ({
   projectInfoContainer: {
     marginTop: '-10px',
     backgroundColor: appColors.subHeaderText,
-    height: '300px',
+    minHeight: '300px',
   },
   projectTitle: {
-    fontSize: '22px',
+    fontSize: '24px',
     color: '#808080',
     textAlign: 'center',
   },
@@ -43,7 +43,7 @@ const projectObjects = {
   projectCaitlin: {
     title: 'Project Caitlin',
     description:
-      'A web and Mobile Application for a high school girl who sustain a head injury during her cross country practice. She now suffers from a form of aphasia that causes her to lose her memory every minute. This application was made to help her keep track of her day to day life as well as her goals and aspirations',
+      'A web and Mobile Application for a high school girl who sustained a head injury during her cross country practice. She now suffers from a form of aphasia that causes her to lose her memory every minute. This application was made to help her keep track of her day to day life as well as her goals and aspirations',
     src: 'https://www.youtube.com/embed/Uqqi5AJw3l8',
     srcType: 'video',
   },
@@ -90,11 +90,13 @@ const Projects = () => {
         className={classes.projectInfoContainer}
         borderRadius={4}
       >
-        <Box className={classes.projectTitle} pt={1}>
-          {projectObject.title}
-        </Box>
-        <Box flexGrow={1} className={classes.projectDescription} pt={1} px={3}>
-          {projectObject.description}
+        <Box flexGrow={1} style={{ fontFamily: 'Verdana' }}>
+          <Box className={classes.projectTitle} pt={1}>
+            {projectObject.title}
+          </Box>
+          <Box className={classes.projectDescription} pt={1} px={3}>
+            {projectObject.description}
+          </Box>
         </Box>
         <Box>{SpringModal()}</Box>
       </Box>

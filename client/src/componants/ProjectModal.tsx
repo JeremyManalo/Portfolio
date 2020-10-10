@@ -7,6 +7,7 @@ import {
   createStyles,
 } from '@material-ui/core/styles';
 import { Box, Button, Modal, Backdrop, Fade } from '@material-ui/core';
+import LaunchIcon from '@material-ui/icons/Launch';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -23,6 +24,7 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     modalButton: {
       bottom: 0,
+      textTransform: 'none',
     },
   })
 );
@@ -54,10 +56,11 @@ export default function TransitionsModal() {
       <Box display="flex" alignSelf="flex-end">
         <ColorButton
           className={classes.modalButton}
-          type="button"
+          size="small"
+          endIcon={<LaunchIcon />}
           onClick={handleOpen}
         >
-          More information
+          More Information
         </ColorButton>
       </Box>
       <Modal
