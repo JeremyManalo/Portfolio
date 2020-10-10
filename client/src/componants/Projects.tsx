@@ -6,6 +6,7 @@ import { Box, Container, Typography } from '@material-ui/core';
 import SectionLabel from './SectionLabel';
 import SpringModal from './ProjectModal';
 import servingNowImage from '../images/serving-now.png';
+import datadietImage from '../images/datadiet.png';
 
 const useStyles = makeStyles((theme) => ({
   mainContainer: {
@@ -39,22 +40,29 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const projectObjects = {
-  projectCaitlin: {
+const projectObjects = [
+  {
     title: 'Project Caitlin',
     description:
       'A web and Mobile Application for a high school girl who sustained a head injury during her cross country practice. She now suffers from a form of aphasia that causes her to lose her memory every minute. This application was made to help her keep track of her day to day life as well as her goals and aspirations',
     src: 'https://www.youtube.com/embed/Uqqi5AJw3l8',
     srcType: 'video',
   },
-  servingNow: {
+  {
     title: 'Serving Now',
     description:
       'Another web and mobile application that provides a platform for local San Jose farmers to list, sell, and have their produce delievered to customers.',
     src: servingNowImage,
     srcType: 'image',
   },
-};
+  {
+    title: 'DataDiet',
+    description:
+      'A native iOS and Android mobile application that utilizes a barcode scanner and text recognition software to identify allergien and diets within a food product from an open-source database.',
+    src: datadietImage,
+    srcType: 'image',
+  },
+];
 
 const Projects = () => {
   const classes = useStyles();
@@ -75,7 +83,7 @@ const Projects = () => {
           />
         );
       case 'image':
-        return <img className={classes.projectMedia} src={servingNowImage} />;
+        return <img className={classes.projectMedia} src={src} />;
     }
   };
 
@@ -107,9 +115,9 @@ const Projects = () => {
     <Container className={classes.mainContainer} maxWidth="md">
       {SectionLabel('Projects')}
       <Box display="flex" flexWrap="wrap" justifyContent="center">
-        {projectItem(projectObjects['projectCaitlin'])}
-        {projectItem(projectObjects['servingNow'])}
-        {projectItem(projectObjects['servingNow'])}
+        {projectObjects.map((value, index) => {
+          return projectItem(value);
+        })}
       </Box>
     </Container>
   );
