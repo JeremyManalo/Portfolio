@@ -18,26 +18,16 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     paper: {
       backgroundColor: theme.palette.background.paper,
-      border: '2px solid #000',
       boxShadow: theme.shadows[5],
       padding: theme.spacing(2, 4, 3),
     },
     modalButton: {
       bottom: 0,
       textTransform: 'none',
+      color: appColors.projectText,
     },
   })
 );
-
-const ColorButton = withStyles((theme: Theme) => ({
-  root: {
-    color: theme.palette.getContrastText(appColors.body),
-    backgroundColor: appColors.body,
-    '&:hover': {
-      backgroundColor: appColors.bodyLighter,
-    },
-  },
-}))(Button);
 
 export default function TransitionsModal() {
   const classes = useStyles();
@@ -54,14 +44,16 @@ export default function TransitionsModal() {
   return (
     <>
       <Box display="flex" alignSelf="flex-end">
-        <ColorButton
+        <Button
           className={classes.modalButton}
           size="small"
+          variant="outlined"
+          color="default"
           endIcon={<LaunchIcon />}
           onClick={handleOpen}
         >
           More Information
-        </ColorButton>
+        </Button>
       </Box>
       <Modal
         aria-labelledby="transition-modal-title"

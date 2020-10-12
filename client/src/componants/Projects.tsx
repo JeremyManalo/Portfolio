@@ -25,17 +25,17 @@ const useStyles = makeStyles((theme) => ({
   },
   projectInfoContainer: {
     marginTop: '-10px',
-    backgroundColor: appColors.subHeaderText,
+    backgroundColor: '#f8f8f8',
     minHeight: '300px',
   },
   projectTitle: {
     fontSize: '24px',
-    color: '#808080',
+    color: appColors.projectText,
     textAlign: 'center',
   },
   projectDescription: {
     fontSize: '14px',
-    color: '#808080',
+    color: appColors.projectText,
     textAlign: 'justify',
   },
 }));

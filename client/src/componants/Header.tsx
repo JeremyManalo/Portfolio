@@ -73,7 +73,11 @@ const Header = () => {
         </Box>
         <Box display="flex" justifyContent="center" component="div">
           <Typography className={classes.title} variant="h4">
-            <Typed strings={['Jeremy Manalo']} typeSpeed={50} />
+            <Typed
+              strings={['Jeremy Manalo']}
+              typeSpeed={50}
+              showCursor={false}
+            />
           </Typography>
         </Box>
         <Box

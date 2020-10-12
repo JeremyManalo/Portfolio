@@ -1,10 +1,11 @@
 import ColorLuminance from '../utlis/ColorLuminance';
 
-const bodyColor: string = '#3e536d';
+const bodyColor: string = '#0a1b1c';
 
 const appColors = {
-  headerText: '#f6db83',
-  subHeaderText: '#fff',
+  headerText: '#e9b521',
+  subHeaderText: '#b0b0b0',
+  projectText: '#808080',
   body: bodyColor,
   bodyDarker: ColorLuminance(bodyColor, -0.2),
   bodyLighter: ColorLuminance(bodyColor, 0.2),
