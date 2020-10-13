@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme: Theme) =>
     modalButton: {
       bottom: 0,
       textTransform: 'none',
-      color: appColors.projectText,
+      color: appColors.subHeaderText,
     },
   })
 );

@@ -23,31 +23,14 @@ import avatar from '../avatar.png';
 
 // CSS STYLES
 const useStyles = makeStyles((theme) => ({
-  menuSliderContainer: {
-    width: 250,
-    background: '#1b3047',
-    height: '100%',
-  },
-  avatar: {
-    display: 'block',
-    margin: '0.5rem auto',
-    width: theme.spacing(13),
-    height: theme.spacing(13),
-  },
   listItem: {
-    color: appColors.subHeaderText,
-  },
-  drawerHeader: {
-    display: 'flex',
-    alignItems: 'center',
-    padding: theme.spacing(0, 1),
-    // necessary for content to be below app bar
-    ...theme.mixins.toolbar,
-    justifyContent: 'flex-start',
+    fontSize: '18px',
+    color: appColors.headerText,
   },
 }));
 
 const Navbar = () => {
+  const classes = useStyles();
   return (
     <>
       <Box component="nav">
@@ -55,7 +38,13 @@ const Navbar = () => {
           position="static"
           style={{ background: 'transparent', boxShadow: 'none' }}
         >
-          <Toolbar></Toolbar>
+          <Toolbar>
+            <Box flexGrow={1}></Box>
+            <Box className={classes.listItem} pr={4}>
+              Projects
+            </Box>
+            <Box className={classes.listItem}> Contact</Box>
+          </Toolbar>
         </AppBar>
       </Box>
     </>

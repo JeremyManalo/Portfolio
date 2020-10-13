@@ -21,21 +21,22 @@ const useStyles = makeStyles((theme) => ({
   },
   projectMedia: {
     width: '100%',
+    backgroundColor: appColors.codeWindow,
     height: '200px',
   },
   projectInfoContainer: {
     marginTop: '-10px',
-    backgroundColor: '#f8f8f8',
+    backgroundColor: appColors.codeWindow,
     minHeight: '300px',
   },
   projectTitle: {
     fontSize: '24px',
-    color: appColors.projectText,
+    color: appColors.subHeaderText,
     textAlign: 'center',
   },
   projectDescription: {
     fontSize: '14px',
-    color: appColors.projectText,
+    color: appColors.subHeaderText,
     textAlign: 'justify',
   },
 }));

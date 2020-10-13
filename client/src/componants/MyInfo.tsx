@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Typography, Container, Box, Link } from '@material-ui/core';
+import appColors from '../styles/appColors';
 import Typed from 'react-typed';
 import titleBarOptions from '../images/title-bar-options.png';
 
@@ -20,10 +21,10 @@ const userStyles = makeStyles({
   },
   codeWindow: {
     padding: '2px',
-    backgroundColor: '#282c33',
+    backgroundColor: appColors.codeWindow,
   },
   titleBar: {
-    backgroundColor: '#282c33',
+    backgroundColor: appColors.codeWindow,
   },
   titleBarOptions: {
     marginLeft: '10px',
@@ -32,7 +33,7 @@ const userStyles = makeStyles({
   },
   codeArea: {
     padding: '1rem',
-    backgroundColor: '#282c33',
+    backgroundColor: appColors.codeWindow,
   },
   typeText: {
     color: '#c57bdb',
