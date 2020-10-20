@@ -18,14 +18,14 @@ const Home = () => {
   const classes = userStyles();
 
   return (
-    <Box component="div">
+    <>
       <AppParticles />
       <Navbar />
       <Header />
       <MyInfo />
       <Projects />
       <Footer />
-    </Box>
+    </>
   );
 };
 

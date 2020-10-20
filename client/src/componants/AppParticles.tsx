@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import appColors from '../styles/appColors';
 import Particles from 'react-tsparticles';
 import { makeStyles } from '@material-ui/styles';
@@ -7,13 +7,21 @@ const useStyles = makeStyles({
   particlesCanvas: {
     position: 'absolute',
     width: '100%',
-    height: '100%',
     zIndex: -1,
   },
 });
 
 const AppParticles = () => {
   const classes = useStyles();
+
+  useEffect(() => {
+    var particlesElem = document.getElementById('tsparticles');
+    var rootElem = document.getElementById('root');
+    if (particlesElem && rootElem) {
+      console.log(particlesElem.style.height, ' ', particlesElem.style.height);
+      particlesElem.style.height = rootElem.style.height + 'px';
+    }
+  });
 
   return (
     <Particles

@@ -21,6 +21,7 @@ const useStyles = makeStyles((theme) => ({
   },
   projectMedia: {
     width: '100%',
+    objectFit: 'cover',
     backgroundColor: appColors.codeWindow,
     height: '200px',
   },
