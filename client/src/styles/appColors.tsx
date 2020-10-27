@@ -3,8 +3,8 @@ import ColorLuminance from '../utlis/ColorLuminance';
 const bodyColor: string = '#0a1b1c';
 
 const appColors = {
-  headerText: '#fff',
-  subHeaderText: '#d4d4d4',
+  headerText: '#9aa1dc',
+  subHeaderText: '#d3d3d3',
   projectText: '#808080',
   codeWindow: '#282c33',
   body: bodyColor,
