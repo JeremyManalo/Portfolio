@@ -2,24 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import appColors from '../styles/appColors';
 import { makeStyles } from '@material-ui/core/styles';
-import MobileRightMenuSlider from '@material-ui/core/Drawer';
-import {
-  AppBar,
-  Toolbar,
-  ListItem,
-  IconButton,
-  ListItemText,
-  ListItemIcon,
-  Avatar,
-  Divider,
-  List,
-  Typography,
-  Box,
-} from '@material-ui/core';
-import { AssignmentInd, Home, Apps, ContactMail } from '@material-ui/icons';
-import ChevronRightIcon from '@material-ui/icons/ChevronRight';
-import MenuOpenIcon from '@material-ui/icons/MenuOpen';
-import avatar from '../avatar.png';
+import { AppBar, Toolbar, Box } from '@material-ui/core';
 
 // CSS STYLES
 const useStyles = makeStyles((theme) => ({

@@ -12,14 +12,21 @@ const useStyles = makeStyles({
 });
 
 const AppParticles = () => {
-  const classes = useStyles();
+  let classes = useStyles();
 
   useEffect(() => {
     var particlesElem = document.getElementById('tsparticles');
     var rootElem = document.getElementById('root');
     if (particlesElem && rootElem) {
-      console.log(particlesElem.style.height, ' ', particlesElem.style.height);
-      particlesElem.style.height = rootElem.style.height + 'px';
+      console.log(particlesElem.scrollHeight, ' ', rootElem.scrollHeight);
+      classes = makeStyles({
+        particlesCanvas: {
+          position: 'absolute',
+          width: '100%',
+          height: rootElem.scrollHeight + 'px',
+          zIndex: -1,
+        },
+      });
     }
   });
 
