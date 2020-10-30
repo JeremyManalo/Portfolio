@@ -49,6 +49,9 @@ const userStyles = makeStyles({
   varText: {
     color: '#abb2be',
   },
+  constVarText: {
+    color: '#e5c07b',
+  },
   LineNumberText: {
     color: '#464e5e',
   },
@@ -82,8 +85,8 @@ const MyInfo = () => {
   // Name Declaration Line
   const nameDeclLine = () => (
     <Box className={classes.reverseIndent} component="div" display="block">
-      {coloredText(classes.typeText, 'let ')}
-      {coloredText(classes.varText, 'jeremy ')}
+      {coloredText(classes.typeText, 'const ')}
+      {coloredText(classes.constVarText, 'jeremy ')}
       {coloredText(classes.operatorText, '= ')}
       {coloredText(classes.varText, '{')}
     </Box>
